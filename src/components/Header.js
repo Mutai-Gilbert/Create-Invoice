@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Header = ({handlePrint}) => (
+const Header = ({ handlePrint }) => (
   <>
     {/* Header */}
     <header className="flex flex-col items-center justify-center mb-5 xl:flex-row xl:justify-between">
@@ -20,6 +21,8 @@ const Header = ({handlePrint}) => (
   </>
 );
 
-
+Header.propTypes = {
+  handlePrint: PropTypes.func.isRequired,
+};
 
 export default Header;
