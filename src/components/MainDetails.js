@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const MainDetails = () => (
+const MainDetails = ({ name, address }) => (
   <>
     <section className="flex flex-col items-end justify-end">
-      <h2 className="text-xl uppercase">Gilbert Mutai</h2>
-      <p>Your Address</p>
+      <h2 className="font-bold text-xl uppercase md:text-4xl">{name}</h2>
+      <p>{address}</p>
     </section>
 
   </>
 );
 
+MainDetails.propTypes = {
+  name: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+};
 export default MainDetails;

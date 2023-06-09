@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Footer = () => (
+const Footer = ({
+  name, email, website, phone, bankName, bankAccount,
+}) => (
   <>
     {/* Footer  */}
     <footer>
@@ -8,37 +11,32 @@ const Footer = () => (
         <li>
           <span>Your Name:</span>
           {' '}
-          Gilbert Mutai
+          {name}
         </li>
         <li>
           <span>Your Email Address:</span>
           {' '}
-          mutaigilbert85@gmail.com
+          {email}
         </li>
         <li>
           <span>Your Phone Number:</span>
           {' '}
-          +254703252051
-        </li>
-        <li>
-          <span>Your Bank:</span>
-          {' '}
-          Access Bank
+          {phone}
         </li>
         <li>
           <span>Bank Account Name:</span>
           {' '}
-          Gilbert Mutai
+          {bankName}
         </li>
         <li>
           <span>Bank Account:</span>
           {' '}
-          1234567890
+          {bankAccount}
         </li>
         <li>
           <span>Your Website:</span>
           {' '}
-          pkoech.mutaigilbert.com
+          <a href={website}>{website}</a>
         </li>
       </ul>
     </footer>
@@ -46,5 +44,14 @@ const Footer = () => (
 
   </>
 );
+
+Footer.propTypes = {
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired,
+  bankName: PropTypes.string.isRequired,
+  bankAccount: PropTypes.string.isRequired,
+};
 
 export default Footer;

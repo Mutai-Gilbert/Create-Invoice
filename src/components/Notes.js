@@ -1,16 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Notes = () => (
+const Notes = ({ notes }) => (
   <>
     {/* Notes  */}
     <section className="mb-5">
       {/* Textarea */}
-      <p> Notes to the client</p>
+      <p>{notes}</p>
     </section>
 
     {/* End of Notes */}
 
   </>
 );
+
+Notes.propTypes = {
+  notes: PropTypes.string.isRequired,
+};
 
 export default Notes;

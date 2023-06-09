@@ -1,13 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Dates = () => (
+const Dates = ({ invoiceNumber, invoiceDate, dueDate }) => (
   <>
     {/* Dates */}
     <article className="my-5 flex items-end justify-end">
       <ul>
-        <li><span className="font-bold">Invoicer number:</span></li>
-        <li><span className="font-bold">Invoicer Date:</span></li>
-        <li><span className="font-bold">Due date: </span></li>
+        <li>
+          <span className="font-bold">
+            invoiceNumber:
+          </span>
+          {invoiceNumber}
+        </li>
+        <li>
+          <span className="font-bold">
+            invoiceDate:
+          </span>
+          {invoiceDate}
+        </li>
+        <li>
+          <span className="font-bold">
+            dueDate:
+          </span>
+          {dueDate}
+        </li>
 
       </ul>
     </article>
@@ -15,5 +31,11 @@ const Dates = () => (
 
   </>
 );
+
+Dates.propTypes = {
+  invoiceNumber: PropTypes.string.isRequired,
+  invoiceDate: PropTypes.string.isRequired,
+  dueDate: PropTypes.string.isRequired,
+};
 
 export default Dates;
