@@ -13,7 +13,7 @@ const Dates = ({ invoiceNumber, invoiceDate, dueDate }) => (
           {invoiceNumber}
         </li>
         <li>
-          <span className="font-bold">
+          <span className="font-bold bg-gray-100">
             invoiceDate:
           </span>
           {invoiceDate}

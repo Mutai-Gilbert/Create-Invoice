@@ -28,7 +28,7 @@ function App() {
     window.print();
   };
   return (
-    <main className="m-5 p-5 xl:max-w-4xl xl:max-auto bg-white rounded shadow">
+    <main className="m-5 p-5 md:max-w-xl md:mx-auto xl:max-w-2xl bg-white rounded shadow">
       {showInvoice ? (
         <div>
           <Header handlePrint={handlePrint} />
