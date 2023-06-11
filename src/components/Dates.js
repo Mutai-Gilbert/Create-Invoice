@@ -6,21 +6,21 @@ const Dates = ({ invoiceNumber, invoiceDate, dueDate }) => (
     {/* Dates */}
     <article className="my-5 flex items-end justify-end">
       <ul>
-        <li>
+        <li className="p-1">
           <span className="font-bold">
-            invoiceNumber:
+            Invoice number:
           </span>
           {invoiceNumber}
         </li>
-        <li>
+        <li className="p-1">
           <span className="font-bold bg-gray-100">
-            invoiceDate:
+            Invoice date:
           </span>
           {invoiceDate}
         </li>
-        <li>
+        <li className="p-1">
           <span className="font-bold">
-            dueDate:
+            Due date:
           </span>
           {dueDate}
         </li>

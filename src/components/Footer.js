@@ -6,35 +6,35 @@ const Footer = ({
 }) => (
   <>
     {/* Footer  */}
-    <footer>
+    <footer className="footer border-t-2 border-gray pt-5">
       <ul className="flex flex-wrap items-center justify-center">
         <li>
-          <span>Your Name:</span>
+          <span><strong>Your Name:</strong></span>
           {' '}
           {name}
         </li>
         <li>
-          <span>Your Email Address:</span>
+          <span><strong>Your Email Address:</strong></span>
           {' '}
           {email}
         </li>
         <li>
-          <span>Your Phone Number:</span>
+          <span><strong>Your Phone Number:</strong></span>
           {' '}
           {phone}
         </li>
         <li>
-          <span>Bank Account Name:</span>
+          <span><strong>Bank Account Name:</strong></span>
           {' '}
           {bankName}
         </li>
         <li>
-          <span>Bank Account:</span>
+          <span><strong>Bank Account:</strong></span>
           {' '}
           {bankAccount}
         </li>
         <li>
-          <span>Your Website:</span>
+          <span><strong>Your Website:</strong></span>
           {' '}
           <a href={website}>{website}</a>
         </li>

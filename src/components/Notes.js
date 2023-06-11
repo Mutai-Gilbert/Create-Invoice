@@ -6,7 +6,7 @@ const Notes = ({ notes }) => (
     {/* Notes  */}
     <section className="mb-5">
       {/* Textarea */}
-      <p>{notes}</p>
+      <p className="lg:w-1/2 text-justify">{notes}</p>
     </section>
 
     {/* End of Notes */}
