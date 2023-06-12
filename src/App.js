@@ -6,23 +6,29 @@ import Header from './components/Header';
 import MainDetails from './components/MainDetails';
 import Notes from './components/Notes';
 import Table from './components/Table';
+import TableForm from './components/TableForm';
 
 function App() {
-  const [showInvoice, setShowInvoice] = useState(false);
+  const [showInvoice, setShowInvoice] = useState(true);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [bankName, setBankName] = useState('');
-  const [bankAccount, setBankAccount] = useState('');
-  const [website, setWebsite] = useState('');
-  const [clientName, setClientName] = useState('');
-  const [clientAddress, setClientAddress] = useState('');
-  const [invoiceNumber, setInvoiceNumber] = useState('');
-  const [invoiceDate, setInvoiceDate] = useState('');
-  const [notes, setNotes] = useState('');
-  const [dueDate, setDueDate] = useState('');
+  const [name, setName] = useState('Gilbert Mutai');
+  const [email, setEmail] = useState('pkoech@mutaigilbert.com');
+  const [phone, setPhone] = useState('0703252051');
+  const [address, setAddress] = useState('Kiphamba street');
+  const [bankName, setBankName] = useState('Access Bank');
+  const [bankAccount, setBankAccount] = useState('1234b 567 890');
+  const [website, setWebsite] = useState('https://pkoech.netlify.app');
+  const [clientName, setClientName] = useState('Bomet County');
+  const [clientAddress, setClientAddress] = useState('29-20400');
+  const [invoiceNumber, setInvoiceNumber] = useState('1001');
+  const [invoiceDate, setInvoiceDate] = useState('12/06/2023');
+  const [dueDate, setDueDate] = useState('31/12/2023');
+  const [notes, setNotes] = useState('Pay the bank account above');
+
+  const [description, setDescription] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [price, setPrice] = useState('');
+  const [amount, setAmount] = useState('');
 
   const handlePrint = () => {
     window.print();
@@ -244,6 +250,17 @@ function App() {
                 </label>
 
               </div>
+            </article>
+
+            {/* This is a table */}
+            <article>
+              <TableForm
+                description={description}
+                setDescription={setDescription}
+                quantity={quantity}
+                price={price}
+                amount={amount}
+              />
             </article>
 
             <label htmlFor="notes">
