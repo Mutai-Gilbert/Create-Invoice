@@ -29,6 +29,7 @@ function App() {
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState('');
   const [amount, setAmount] = useState('');
+  const [list, setList] = useState([]);
 
   const handlePrint = () => {
     window.print();
@@ -41,7 +42,14 @@ function App() {
           <MainDetails name={name} address={address} />
           <ClientsDetails clientName={clientName} clientAddress={clientAddress} />
           <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} dueDate={dueDate} />
-          <Table />
+          <Table
+            description={description}
+            quantity={quantity}
+            price={price}
+            amount={amount}
+            list={list}
+            setList={setList}
+          />
           <Notes notes={notes} />
           <Footer
             name={name}
@@ -141,7 +149,7 @@ function App() {
                 </label>
               </div>
             </article>
-            <article className="md:grid grid-cols-2 gap-10">
+            <article className="md:grid grid-cols-3 gap-10">
               <div className="flex flex-col">
                 <label htmlFor="bankName">
                   Your bank name
@@ -171,7 +179,7 @@ function App() {
                 </label>
               </div>
             </article>
-            <article className="md:grid grid-cols-2 gap-10 md:mt-16">
+            <article className="md:grid grid-cols-3 gap-10 md:mt-16">
               <div className="flex flex-col">
                 <label htmlFor="clientName">
                   Your clients name
@@ -204,7 +212,7 @@ function App() {
               </div>
             </article>
 
-            <article className="md:grid grid-cols-3 gap-10">
+            <article className="md:grid grid-cols-4 gap-10">
               <div className="flex flex-col">
                 <label htmlFor="invoiceNumber">
                   Your invoice number
@@ -258,8 +266,13 @@ function App() {
                 description={description}
                 setDescription={setDescription}
                 quantity={quantity}
+                setQuantity={setQuantity}
                 price={price}
+                setPrice={setPrice}
                 amount={amount}
+                setAmount={setAmount}
+                list={list}
+                setList={setList}
               />
             </article>
 
