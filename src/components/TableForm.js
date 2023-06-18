@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 const TableForm = ({
   description, setDescription, quantity, setQuantity,
   price, setPrice, amount, setAmount, list, setList,
 }) => {
+  const [editing, setEditing] = React.useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newItem = {
@@ -20,10 +23,29 @@ const TableForm = ({
     setPrice('');
     setAmount('');
     setList([...list, newItem]);
+    setEditing(false);
   };
+  // Calculate function
   const calculateAmount = () => {
     setAmount(quantity * price);
   };
+  // edit functioon
+  const editRow = (id) => {
+    const editedItem = list.find((item) => item.id === id);
+    setList(list.filter((item) => item.id !== id));
+    setDescription(editedItem.description);
+    setQuantity(editedItem.quantity);
+    setPrice(editedItem.price);
+    setAmount(editedItem.amount);
+    setEditing(true);
+  };
+
+  // Delete function
+  const deleteItem = (id) => {
+    const newList = list.filter((item) => item.id !== id);
+    setList(newList);
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -80,7 +102,7 @@ const TableForm = ({
             rounded shadow border-2 border-blue-500
             hover:bg-transparent hover:text-blue-500 transition-all duration-300"
         >
-          Add table item
+          {editing ? 'Editing row item' : 'Add table item'}
 
         </button>
 
@@ -95,14 +117,24 @@ const TableForm = ({
             <td className="font-bold">Amount</td>
           </tr>
         </thead>
-        {list && list.map((id, description, quantity, price, amount) => (
-          <React.Fragment key={id}>
+        {list && list.map((item) => (
+          <React.Fragment key={item.id}>
             <tbody>
               <tr>
-                <td>{description}</td>
-                <td>{quantity}</td>
-                <td>{price}</td>
-                <td>{amount}</td>
+                <td>{item.description}</td>
+                <td>{item.quantity}</td>
+                <td>{item.price}</td>
+                <td>{item.amount}</td>
+                <td>
+                  <button type="button" onClick={() => deleteItem(item.id)} aria-label="Delete">
+                    <AiOutlineDelete className="font-bold text-red-500 text-xl" />
+                  </button>
+                </td>
+                <td>
+                  <button type="button" onClick={() => editRow(item.id)} aria-label="Delete">
+                    <AiOutlineEdit className="font-bold text-green-500 text-xl" />
+                  </button>
+                </td>
               </tr>
             </tbody>
           </React.Fragment>

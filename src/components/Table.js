@@ -12,14 +12,14 @@ const Table = ({ list }) => (
           <td className="font-bold">Amount</td>
         </tr>
       </thead>
-      {list && list.map((id, description, quantity, price, amount) => (
-        <React.Fragment key={id}>
+      {list && list.map((item) => (
+        <React.Fragment key={item.id}>
           <tbody>
             <tr>
-              <td>{description}</td>
-              <td>{quantity}</td>
-              <td>{price}</td>
-              <td>{amount}</td>
+              <td>{item.description}</td>
+              <td>{item.quantity}</td>
+              <td>{item.price}</td>
+              <td>{item.amount}</td>
             </tr>
           </tbody>
         </React.Fragment>

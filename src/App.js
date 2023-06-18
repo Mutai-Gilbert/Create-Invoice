@@ -16,7 +16,7 @@ function App() {
   const [phone, setPhone] = useState('0703252051');
   const [address, setAddress] = useState('Kiphamba street');
   const [bankName, setBankName] = useState('Access Bank');
-  const [bankAccount, setBankAccount] = useState('1234b 567 890');
+  const [bankAccount, setBankAccount] = useState('1234 567 890');
   const [website, setWebsite] = useState('https://pkoech.netlify.app');
   const [clientName, setClientName] = useState('Bomet County');
   const [clientAddress, setClientAddress] = useState('29-20400');
