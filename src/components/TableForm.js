@@ -1,34 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 const TableForm = ({
   description, setDescription, quantity, setQuantity,
-  price, setPrice, amount, setAmount, list, setList,
+  price, setPrice, amount, setAmount, list, setList, total, setTotal,
 }) => {
   const [editing, setEditing] = React.useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const newItem = {
-      id: uuidv4(),
-      description,
-      quantity,
-      price,
-      amount,
-    };
-    setDescription('');
-    setQuantity('');
-    setPrice('');
-    setAmount('');
-    setList([...list, newItem]);
-    setEditing(false);
+    if (!description || !quantity || !price) {
+      e.preventDefault();
+    } else {
+      e.preventDefault();
+      const newItem = {
+        id: uuidv4(),
+        description,
+        quantity,
+        price,
+        amount,
+      };
+      setDescription('');
+      setQuantity('');
+      setPrice('');
+      setAmount('');
+      setList([...list, newItem]);
+      setEditing(false);
+    }
   };
+
   // Calculate function
   const calculateAmount = () => {
     setAmount(quantity * price);
   };
+  // calculate total amount in tables
+  useEffect(() => {
+    const rows = document.querySelectorAll('.amount');
+    let sum = 0;
+    rows.forEach((row) => {
+      sum += Number(row.textContent);
+      setTotal(sum);
+    });
+  });
   // edit functioon
   const editRow = (id) => {
     const editedItem = list.find((item) => item.id === id);
@@ -124,7 +138,7 @@ const TableForm = ({
                 <td>{item.description}</td>
                 <td>{item.quantity}</td>
                 <td>{item.price}</td>
-                <td>{item.amount}</td>
+                <td className="amount">{item.amount}</td>
                 <td>
                   <button type="button" onClick={() => deleteItem(item.id)} aria-label="Delete">
                     <AiOutlineDelete className="font-bold text-red-500 text-xl" />
@@ -140,6 +154,14 @@ const TableForm = ({
           </React.Fragment>
         ))}
       </table>
+
+      <div>
+        <h2 className="flex items-end justify-end text-gray-600 text-4xl">
+          Kshs
+          {' '}
+          {total.toLocaleString()}
+        </h2>
+      </div>
     </>
   );
 };
@@ -156,6 +178,8 @@ TableForm.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   list: PropTypes.array.isRequired,
   setList: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  setTotal: PropTypes.func.isRequired,
 };
 
 export default TableForm;

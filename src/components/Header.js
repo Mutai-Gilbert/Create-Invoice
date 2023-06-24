@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Header = ({ handlePrint }) => (
+const Header = () => (
   <>
     {/* Header */}
     <header className="flex flex-col items-center justify-center mb-5 xl:flex-row xl:justify-between">
       <div>
         <h1 className="font-bold uppercase tracking-wide text-4xl mb-3"> Invoicer</h1>
       </div>
-      <div>
+      {/* <div>
         <ul className="flex items-center justify-between flex-wrap">
           <li>
             <button
@@ -45,15 +44,11 @@ const Header = ({ handlePrint }) => (
             </button>
           </li>
         </ul>
-      </div>
+      </div> */}
     </header>
     {/* End of Header */}
 
   </>
 );
-
-Header.propTypes = {
-  handlePrint: PropTypes.func.isRequired,
-};
 
 export default Header;

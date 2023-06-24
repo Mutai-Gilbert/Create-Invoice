@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Table = ({ list }) => (
+const Table = ({ list, total }) => (
   <>
     <table width="100%" className="mb-10">
       <thead>
@@ -25,12 +25,20 @@ const Table = ({ list }) => (
         </React.Fragment>
       ))}
     </table>
+    <div>
+      <h2 className="flex items-end justify-end text-gray-600 text-4xl">
+        Kshs
+        {' '}
+        {total.toLocaleString()}
+      </h2>
+    </div>
   </>
 );
 
 Table.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   list: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default Table;
