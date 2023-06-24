@@ -173,7 +173,7 @@ function App() {
                   </label>
                 </div>
               </article>
-              <article className="md:grid grid-cols-2 gap-10">
+              <article className="md:grid grid-cols-3 gap-10">
                 <div className="flex flex-col">
                   <label htmlFor="bankName">
                     Your bank name
@@ -203,7 +203,7 @@ function App() {
                   </label>
                 </div>
               </article>
-              <article className="md:grid grid-cols-2 gap-10 md:mt-16">
+              <article className="md:grid grid-cols-3 gap-10 md:mt-16">
                 <div className="flex flex-col">
                   <label htmlFor="clientName">
                     Your clients name
