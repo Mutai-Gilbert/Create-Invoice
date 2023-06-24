@@ -1,6 +1,6 @@
 # About Invoicer - Read the note at the end
 
-####[Live Link Click Here] (https://create-invoicer.netlify.app)
+####[Live Link Click Here](https://create-invoicer.netlify.app)
 
 
 ![alt](./preview.png)
