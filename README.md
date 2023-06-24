@@ -1,9 +1,8 @@
 # About Invoicer - Read the note at the end
 
-#### https://invoicerv2.netlify.app
+#### 
 
-![alt](./Screenshot.png)
-
+![alt](./preview.png)
 ## Current Features
 
 1. Form to capture yours and your client's data such as full name, email address, physical address, website and your bank account details.
@@ -33,4 +32,4 @@ Thank you, that is all for now. N/B: Updated 22/02/22. (The date looks cool don'
 
 I am adding more features and functionality to this app. If you're following along from the YouTube videos, please take note of the changes in file structure and everything.
 
-### Built by [Thomas Sankara](https://tsbsankara.netlify.app)
+### Built by [Gilbert Mutai]()
